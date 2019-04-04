@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Article from './Article';
+import './App.css';
+import Discussion from './Discussion';
 
 class App extends Component {
   render() {
@@ -8,6 +10,7 @@ class App extends Component {
       <div className="App">
         <main>
           <Article />
+          <Discussion />
         </main>
       </div>
     );
