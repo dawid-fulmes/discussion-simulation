@@ -1,9 +1,13 @@
 import React from 'react';
+import Form from './Form'
 
 const Discussion = () => {
     return (
         <section className="discussion">
-            Discussion section
+            <section>
+                Place for comments
+            </section>
+            <Form />
         </section>
     );
 }
