@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+
+    @media (min-width: 400px) {
+        font-size: 12px;
+    }
+
+    @media (min-width: 640px) {
+        font-size: 13px;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 15px;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 20px;
+    }
+}
+
+.App {
+    margin: 3%;
+
+    @media (min-width: 1024px) {
+        max-width: 1024px;
+        margin: 1% auto;
+    }
+}

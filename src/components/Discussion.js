@@ -11,7 +11,8 @@ const Discussion = ({ commentLog }) => {
         </div>
     ))
     return (
-        <section className="discussion">
+        <section className="Discussion">
+            <h1>Comments:</h1>
             <section>
                 {comments}
             </section>
