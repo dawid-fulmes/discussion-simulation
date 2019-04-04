@@ -1,6 +1,6 @@
 import React from 'react';
 import picture from '../img/money.jpg';
-import './Article.css';
+import './Article.scss';
 
 
 const Article = () => {

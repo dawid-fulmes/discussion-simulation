@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import Article from './Article';
-import './App.css';
 import Discussion from './Discussion';
 
 class App extends Component {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './Form'
+import './Discussion.scss'
 
 const Discussion = ({ commentLog }) => {
     const comments = commentLog.map(comment => (
