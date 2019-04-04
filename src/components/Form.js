@@ -3,8 +3,10 @@ import './Form.scss'
 
 const Form = () => {
     return (
-        <div className="form">
-            Form
+        <div className="Form">
+            <label>Your nickname: <input type="text" /></label>
+            <textarea placeholder="Your comment..."></textarea>
+            <button>Add comment</button>
         </div>
     );
 }

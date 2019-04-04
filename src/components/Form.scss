@@ -1,0 +1,63 @@
+.Form {
+    margin-top: 5%;
+    font-size: 1.3rem;
+    background-color: #B38F60;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3%;
+    border-radius: 10px;
+
+    label {
+        margin: 2%;
+        flex-grow: 1;
+        text-align: center;
+
+        input {
+            background-color: #FFE3BD;
+            font-size: 1.3rem;
+            line-height: 1;
+            outline: none;
+            border: 1px solid #000;
+            padding: 1%;
+            border-radius: 10px;
+            transition: .3s;
+
+            &:focus {
+                background-color: #ddc19b;
+            }
+        }
+    }
+
+    textarea {
+        font-size: 1.3rem;
+        flex-basis: 100%;
+        outline: none;
+        background-color: #FFE3BD;
+        border: 1px solid #000;
+        padding: 1%;
+        transition: .3s;
+        border-radius: 10px;
+
+        &:focus {
+            background-color: #ddc19b;
+        }
+    }
+
+    button {
+        margin: 2%;
+        background-color: #FFE3BD;
+        font-size: 2rem;
+        line-height: 2;
+        padding: 0 3%;
+        border: 2px solid #000;
+        border-radius: 10px;
+        outline: none;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            background-color: #ddc19b;
+        }
+    }
+}

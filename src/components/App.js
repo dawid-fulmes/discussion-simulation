@@ -19,7 +19,7 @@ class App extends Component {
         else throw new Error()
       })
       .then(newComment => {
-        const randTime = Math.floor(Math.random() * 10000)
+        const randTime = Math.floor(Math.random() * 20000 + 5000)
         const commentLog = [...this.state.commentLog]
         console.log(randTime, commentLog);
         commentLog.push(newComment)
@@ -32,7 +32,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    this.otherUserAddNewComment()
+    // this.otherUserAddNewComment()
   }
 
   render() {
