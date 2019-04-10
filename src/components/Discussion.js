@@ -1,14 +1,11 @@
 import React from 'react';
 import Form from './Form'
+import Comment from './Comment'
 import './Discussion.scss'
 
 const Discussion = ({ commentLog }) => {
     const comments = commentLog.map(comment => (
-        <div>
-            <br />
-            <div>{comment.content}</div>
-            <br />
-        </div>
+        <Comment key={comment.id} comment={comment} />
     ))
     return (
         <section className="Discussion">
