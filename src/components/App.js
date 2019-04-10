@@ -7,7 +7,14 @@ class App extends Component {
   state = {
     commentLog: [],
   }
-
+  //Generating random content of comment
+  getRandomComment = () => {
+    const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quae quasi cumque aliquid libero porro totam, blanditiis dolor dolorem sit inventore at laudantium, voluptas animi voluptatum praesentium architecto quo iusto corporis minus vel recusandae esse qui! Ipsa reiciendis reprehenderit maiores quod molestiae numquam quisquam doloremque esse velit dolores. Excepturi fugit saepe molestias doloribus quam iure a repellendus. Fugiat repellat nulla delectus vitae omnis vel sequi esse architecto assumenda quo illum recusandae dolores molestias iusto amet minima error illo, dolorum velit veniam. Atque, voluptas expedita soluta accusamus sed saepe voluptatum et, nobis mollitia nostrum maxime distinctio assumenda repellendus recusandae numquam iure?";
+    const randStartPoint = Math.floor(Math.random() * text.length / 2);
+    const randEndPoint = Math.floor(Math.random() * ((text.length - 1) - (randStartPoint + 10) + 1)) + randStartPoint + 10;
+    const randomComment = text.slice(randStartPoint, randEndPoint);
+    return randomComment.charAt(0).toUpperCase() + randomComment.slice(1);
+  }
 
   //Simulation of other users adding new comments
   otherUserAddNewComment = () => {
@@ -23,7 +30,7 @@ class App extends Component {
           id: this.state.commentLog.length,
           photo: thumbnail,
           nickname: username,
-          content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, modi!"
+          content: this.getRandomComment()
         }
         return newComment
       })
