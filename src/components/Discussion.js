@@ -6,7 +6,7 @@ const Discussion = ({ commentLog }) => {
     const comments = commentLog.map(comment => (
         <div>
             <br />
-            <div>{comment.body}</div>
+            <div>{comment.content}</div>
             <br />
         </div>
     ))
