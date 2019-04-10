@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Form.scss'
-
-const Form = () => {
-    return (
-        <div className="Form">
-            <label>Your nickname: <input type="text" /></label>
-            <textarea placeholder="Your comment..."></textarea>
-            <button>Add comment</button>
-        </div>
-    );
+class Form extends Component {
+    state = {}
+    render() {
+        return (
+            <div className="Form">
+                <label>Your nickname: <input type="text" /></label>
+                <textarea placeholder="Your comment..."></textarea>
+                <button>Add comment</button>
+            </div>
+        );
+    }
 }
 
 export default Form;
