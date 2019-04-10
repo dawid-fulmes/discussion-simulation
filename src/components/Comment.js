@@ -4,9 +4,9 @@ import './Comment.scss'
 const Comment = ({ comment }) => {
     return (
         <div className="comment">
-            <div>{comment.photo}</div>
-            <div>{comment.nickname}</div>
-            <div>{comment.content}</div>
+            <div className="photo"><img src={comment.photo} alt={`avatar of ${comment.nickname}`} /></div>
+            <div className="nickname">{comment.nickname}</div>
+            <div className="content">{comment.content}</div>
         </div>
     );
 }
