@@ -3,7 +3,7 @@ import './Comment.scss'
 
 const Comment = ({ comment }) => {
     return (
-        <div>
+        <div className="comment">
             <div>{comment.photo}</div>
             <div>{comment.nickname}</div>
             <div>{comment.content}</div>
