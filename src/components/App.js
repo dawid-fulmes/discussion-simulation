@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './App.scss';
 import Article from './Article';
 import Discussion from './Discussion';
+import userImg from '../img/user.png'
 
 class App extends Component {
   state = {
     commentLog: [],
   }
 
-  pushCommentToLog = (nickname, content, photo = null) => {
+  pushCommentToLog = (nickname, content, photo = userImg) => {
     const newComment = {
       id: this.state.commentLog.length,
       photo,
