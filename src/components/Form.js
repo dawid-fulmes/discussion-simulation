@@ -8,20 +8,27 @@ class Form extends Component {
     }
 
     handleChange = (e) => {
-        const { name, value } = e.target
-        console.log(name, value)
+        const { name, value } = e.target;
+        console.log(name, value);
         this.setState({ [name]: value });
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const { nickname, comment } = this.state;
+        this.props.pushCommentToLog(nickname, comment)
+        this.setState({ comment: '' });
+    }
+
     render() {
-        const { handleChange } = this
-        const { comment, nickname } = this.state
+        const { handleChange, handleSubmit } = this;
+        const { comment, nickname } = this.state;
         return (
-            <div className="Form">
+            <form onSubmit={handleSubmit} className="Form">
                 <label>Your nickname: <input name="nickname" value={nickname} onChange={handleChange} type="text" /></label>
                 <textarea name="comment" value={comment} onChange={handleChange} placeholder="your comment..."></textarea>
                 <button>Add comment</button>
-            </div>
+            </form>
         );
     }
 }

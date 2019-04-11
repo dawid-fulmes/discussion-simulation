@@ -7,6 +7,7 @@ class App extends Component {
   state = {
     commentLog: [],
   }
+
   //Generating random content of comment
   getRandomComment = () => {
     const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quae quasi cumque aliquid libero porro totam, blanditiis dolor dolorem sit inventore at laudantium, voluptas animi voluptatum praesentium architecto quo iusto corporis minus vel recusandae esse qui! Ipsa reiciendis reprehenderit maiores quod molestiae numquam quisquam doloremque esse velit dolores. Excepturi fugit saepe molestias doloribus quam iure a repellendus. Fugiat repellat nulla delectus vitae omnis vel sequi esse architecto assumenda quo illum recusandae dolores molestias iusto amet minima error illo, dolorum velit veniam. Atque, voluptas expedita soluta accusamus sed saepe voluptatum et, nobis mollitia nostrum maxime distinctio assumenda repellendus recusandae numquam iure?";
@@ -44,6 +45,16 @@ class App extends Component {
       .catch(err => console.log(`Something went wrong! ${err}`))
   }
 
+  pushCommentToLog = (nickname, content, photo = null) => {
+    const newComment = {
+      id: this.state.commentLog.length,
+      photo,
+      nickname,
+      content
+    }
+    const commentLog = [...this.state.commentLog, newComment]
+    this.setState({ commentLog });
+  }
 
   componentDidMount() {
     this.otherUserAddNewComment()
@@ -55,7 +66,7 @@ class App extends Component {
       <div className="App">
         <main>
           <Article />
-          <Discussion commentLog={commentLog} />
+          <Discussion commentLog={commentLog} pushCommentToLog={this.pushCommentToLog} />
         </main>
       </div>
     );

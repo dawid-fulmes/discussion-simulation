@@ -3,7 +3,7 @@ import Form from './Form'
 import Comment from './Comment'
 import './Discussion.scss'
 
-const Discussion = ({ commentLog }) => {
+const Discussion = ({ commentLog, pushCommentToLog }) => {
     const comments = commentLog.map(comment => (
         <Comment key={comment.id} comment={comment} />
     ))
@@ -13,7 +13,7 @@ const Discussion = ({ commentLog }) => {
             <section>
                 {comments}
             </section>
-            <Form />
+            <Form pushCommentToLog={pushCommentToLog} />
         </section>
     );
 }
