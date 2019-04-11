@@ -53,7 +53,9 @@ class App extends Component {
       })
       .catch(err => console.log(`Something went wrong! ${err}`))
   }
-
+  changeSortOrder = () => {
+    this.setState({ sortFromNewest: !this.state.sortFromNewest });
+  }
   componentDidMount() {
     this.otherUserAddNewComment()
   }
@@ -64,7 +66,7 @@ class App extends Component {
       <div className="App">
         <main>
           <Article />
-          <Discussion commentLog={commentLog} pushCommentToLog={this.pushCommentToLog} sortFromNewest={this.state.sortFromNewest} />
+          <Discussion commentLog={commentLog} pushCommentToLog={this.pushCommentToLog} sortFromNewest={this.state.sortFromNewest} changeSortOrder={this.changeSortOrder} />
         </main>
       </div>
     );
