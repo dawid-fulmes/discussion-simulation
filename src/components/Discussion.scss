@@ -14,5 +14,22 @@
         background-color: rgb(83, 150, 189);
         border-radius: 10px;
         margin: 0;
+        height: 70vh;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: rgb(83, 150, 189);
+        }
+
+        &::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #555;
+        }
     }
 }
