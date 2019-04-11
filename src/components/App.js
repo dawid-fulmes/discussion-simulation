@@ -8,6 +8,16 @@ class App extends Component {
     commentLog: [],
   }
 
+  pushCommentToLog = (nickname, content, photo = null) => {
+    const newComment = {
+      id: this.state.commentLog.length,
+      photo,
+      nickname,
+      content
+    }
+    const commentLog = [...this.state.commentLog, newComment]
+    this.setState({ commentLog });
+  }
   //Generating random content of comment
   getRandomComment = () => {
     const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quae quasi cumque aliquid libero porro totam, blanditiis dolor dolorem sit inventore at laudantium, voluptas animi voluptatum praesentium architecto quo iusto corporis minus vel recusandae esse qui! Ipsa reiciendis reprehenderit maiores quod molestiae numquam quisquam doloremque esse velit dolores. Excepturi fugit saepe molestias doloribus quam iure a repellendus. Fugiat repellat nulla delectus vitae omnis vel sequi esse architecto assumenda quo illum recusandae dolores molestias iusto amet minima error illo, dolorum velit veniam. Atque, voluptas expedita soluta accusamus sed saepe voluptatum et, nobis mollitia nostrum maxime distinctio assumenda repellendus recusandae numquam iure?";
@@ -27,33 +37,11 @@ class App extends Component {
       })
       .then(result => {
         const { login: { username }, picture: { thumbnail } } = result.results[0]
-        const newComment = {
-          id: this.state.commentLog.length,
-          photo: thumbnail,
-          nickname: username,
-          content: this.getRandomComment()
-        }
-        return newComment
-      })
-      .then(newComment => {
+        this.pushCommentToLog(username, this.getRandomComment(), thumbnail)
         const randTime = Math.floor(Math.random() * 20000 + 5000)
-        const commentLog = [...this.state.commentLog]
-        commentLog.push(newComment)
-        this.setState({ commentLog });
         setTimeout(this.otherUserAddNewComment, randTime)
       })
       .catch(err => console.log(`Something went wrong! ${err}`))
-  }
-
-  pushCommentToLog = (nickname, content, photo = null) => {
-    const newComment = {
-      id: this.state.commentLog.length,
-      photo,
-      nickname,
-      content
-    }
-    const commentLog = [...this.state.commentLog, newComment]
-    this.setState({ commentLog });
   }
 
   componentDidMount() {
