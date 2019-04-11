@@ -7,6 +7,7 @@ import userImg from '../img/user.png'
 class App extends Component {
   state = {
     commentLog: [],
+    sortFromNewest: true
   }
 
   pushCommentToLog = (nickname, content, photo = userImg) => {
@@ -63,7 +64,7 @@ class App extends Component {
       <div className="App">
         <main>
           <Article />
-          <Discussion commentLog={commentLog} pushCommentToLog={this.pushCommentToLog} />
+          <Discussion commentLog={commentLog} pushCommentToLog={this.pushCommentToLog} sortFromNewest={this.state.sortFromNewest} />
         </main>
       </div>
     );
