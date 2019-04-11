@@ -21,6 +21,7 @@ class App extends Component {
         date.getHours(),
         date.getMinutes(),
         date.getSeconds(),
+        date.getTime(),
       ]
     }
     const commentLog = [...this.state.commentLog, newComment]
