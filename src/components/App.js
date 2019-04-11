@@ -10,11 +10,18 @@ class App extends Component {
   }
 
   pushCommentToLog = (nickname, content, photo = userImg) => {
+    const date = new Date()
     const newComment = {
       id: this.state.commentLog.length,
       photo,
       nickname,
-      content
+      content,
+      date: [
+        date.toUTCString().slice(0, -13),
+        date.getHours(),
+        date.getMinutes(),
+        date.getSeconds(),
+      ]
     }
     const commentLog = [...this.state.commentLog, newComment]
     this.setState({ commentLog });
