@@ -15,10 +15,12 @@ const Discussion = ({ commentLog, pushCommentToLog, sortFromNewest, changeSortOr
     ))
     return (
         <section className="Discussion">
-            <h1>Comments:</h1>
-            <button onClick={changeSortOrder}>
-                {sortFromNewest ? "From Newest" : "From Oldest"}
-            </button>
+            <header>
+                <h1>Comments:</h1>
+                <button onClick={changeSortOrder}>
+                    {sortFromNewest ? "From Newest" : "From Oldest"}
+                </button>
+            </header>
             <section>
                 {comments}
             </section>
