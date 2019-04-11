@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/discussion-simulation/static/css/main.ab43782f.chunk.css"
   },
   {
-    "revision": "4c3bc330580a31f4360fc522147b45e4",
+    "revision": "7e52c5a5fdb85c6ddbaddecf5fede063",
     "url": "/discussion-simulation/index.html"
   }
 ];
